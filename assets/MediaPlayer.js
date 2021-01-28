@@ -28,7 +28,7 @@ MediaPlayer.prototype.togglePlay = function () {
 };
 
 MediaPlayer.prototype.mute = function () {
-	this.media.mute = false;
+	this.media.muted = false;
 };
 
 MediaPlayer.prototype.toggleMute = function () {
