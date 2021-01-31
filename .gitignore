@@ -1,2 +1,4 @@
 /node_modules/
 /assets/ejercicio.mp4
+/dist/
+.cache
