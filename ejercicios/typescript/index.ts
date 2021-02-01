@@ -1,22 +1,32 @@
-function add(a: number, b: number): number{
-    return a + b
+// Interfaces
+enum Color {
+    Rojo = "Rojo",
+    Verde = "Verde",
 }
 
-const sum = add(4, 6);
-
-function createAddler(a: number): (number) => number {
-    return function(b: number){
-        return b + a
-    }
+interface Rectangulo {
+    ancho: number
+    alto: number
+    color?: Color
 }
 
-const addFour = createAddler(4)
-const fourPlusSix = addFour(6)
-
-function fullName(firstName: string, lastName: string = "Guerra"): string {
-    return `${firstName} ${lastName}`
+let rect: Rectangulo = {
+    ancho: 4,
+    alto: 6,
+    //color: Color.Rojo
 }
 
-const aaroncito = fullName("Aaron")
+function area(r: Rectangulo){
+    return r.alto * r.ancho
+}
 
-console.log(aaroncito)
+const areaRect = area(rect)
+console.log(areaRect)
+
+console.log(rect.toString())
+
+rect.toString = function(){
+    return this.color ? `Un rectangulo ${this.color}` : `Un rectangulo`
+}
+
+console.log(rect.toString())
